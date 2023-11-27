@@ -70,7 +70,8 @@ def AthenasChallenge2():
     if chance==1:
         print( " ATHENAS CHALLENGE ".center(50, "~"))
         print("ATHENA has taken an interest in you. She gives you a challenge to prove yourself worthy")
-        AthenasChallenge.main()
+        return AthenasChallenge.main()
+        
 def HephaestusBlessing(player):
     print( " HEPHAESTUS' BLESSING ".center(50, "~"))
     print("HEPHESTUS has taken pity on you. He gifts you a Sword and Shield")
@@ -270,7 +271,8 @@ while True:
         break
     if P1Inventory["Turns"]>P2Inventory["Turns"]:
         print(P2+"'s turn!, you have "+str(player2score)+" points")
-        AthenasChallenge2()
+        Athena2 = AthenasChallenge2()
+        print(Athena2)
         player2score-=(HephaestusAnger()*400)
         random_prize(P2)
         if P2Inventory["Sword"]>0:
@@ -289,7 +291,8 @@ while True:
 
     else:
         print(P1+"'s turn!, you have "+str(player1score)+" points")
-        AthenasChallenge2()
+        Athena1 = AthenasChallenge2()
+        print(Athena1)
         player1score-=(HephaestusAnger()*400)
         random_prize(P1)
         if P1Inventory["Sword"]>0:
