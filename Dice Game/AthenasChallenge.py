@@ -8,6 +8,8 @@ from tkinter import PhotoImage
 
 
 msg = "MESSAGE FROM ATHENA:  WELCOME TO MY CHALLENGE MORTAL. HERE ARE THE RULES: Click on a square and you shall receive a number.That number is how many mines are surrounding it.If you find the mine, you can open unopened squares around it, opening more areas. GOOD LUCK"
+global complete
+complete=None
 
 class Application(tk.Frame):
   def __init__(self, master=None):
@@ -218,6 +220,7 @@ class Application(tk.Frame):
               font=('verdana', 10, 'bold'), compound=tk.LEFT,
               ).grid(row=5, column=0, padx=50, pady=5,
                       columnspan=4)
+      complete=True
 
   def update_score(self, point):
       self.score += point
@@ -312,6 +315,7 @@ class Application(tk.Frame):
               font=('verdana', 10, 'bold'), compound=tk.LEFT,
               ).grid(row=5, column=0, padx=50, pady=5,
                       columnspan=4)
+      complete=False
 
   def help_window(self):
       win = tk.Toplevel(self)
@@ -332,6 +336,7 @@ def main():
   ATHENASCHALLENGE_logo = PhotoImage(file='icons/logo.png')
   app = Application(master=root)
   app.mainloop()
+  return complete
 if __name__ == '__main__':
   main()
 
