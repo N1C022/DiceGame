@@ -136,7 +136,7 @@ class Application(tk.Frame):
           self.buttons_list.append(buttons)
 
   def start_game(self):
-      self.board = [[' ' for i in range(9)] for j in range(9)]
+      self.board = [[' ' for _ in range(9)] for _ in range(9)]
       self.mines = []
 
       self.first_Move = True
